@@ -3,17 +3,18 @@ FROM runpod/stable-diffusion:web-automatic-3.0.0
 SHELL ["/bin/bash", "-c"]
 
 ENV PATH="${PATH}:/workspace/stable-diffusion-webui/venv/bin"
+ENV MODELS=/workspace/stable-diffusion-webui/models
 
 WORKDIR /
 
-RUN rm /workspace/stable-diffusion-webui/models/Stable-diffusion/SDv1-5.ckpt
-RUN rm /workspace/stable-diffusion-webui/models/Stable-diffusion/SDv2-768.ckpt
-RUN mkdir /workspace/stable-diffusion-webui/models/Lora
-RUN wget -O /workspace/stable-diffusion-webui/models/Lora/Lucario.safetensors \
-    https://civitai.com/api/download/models/16734 --content-disposition
-RUN wget -O /workspace/stable-diffusion-webui/models/Stable-diffusion/anything-v4.5-pruned.safetensors \
-    https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.5-pruned.safetensors
-RUN cd /workspace/stable-diffusion-webui && git fetch && git pull
+RUN rm $MODELS/Stable-diffusion/*
+RUN mkdir $MODELS/Lora
+# RUN wget -O $MODELS/Stable-diffusion/anything-v4.5-pruned.safetensors \
+#     https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.5-pruned.safetensors
+# RUN wget -O $MODELS/Lora/Lucario.safetensors \
+#     https://civitai.com/api/download/models/16734 --content-disposition
+RUN wget -O $MODELS/Stable-diffusion/Kemono.safetensors \
+    https://civitai.com/api/download/models/27823 --content-disposition
 
 RUN pip install -U xformers
 RUN pip install runpod
