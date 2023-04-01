@@ -14,7 +14,7 @@ RUN mkdir $MODELS/Lora
 # RUN wget -O $MODELS/Lora/Lucario.safetensors \
 #     https://civitai.com/api/download/models/16734 --content-disposition
 RUN wget -O $MODELS/Stable-diffusion/Kemono.safetensors \
-    https://civitai.com/api/download/models/14047 --content-disposition
+    https://civitai.com/api/download/models/32830
 
 RUN pip install -U xformers
 RUN pip install runpod
