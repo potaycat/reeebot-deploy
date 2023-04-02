@@ -7,6 +7,9 @@ ENV MODELS=/workspace/stable-diffusion-webui/models
 
 WORKDIR /
 
+RUN pip install -U xformers
+RUN pip install runpod
+
 RUN rm $MODELS/Stable-diffusion/*
 RUN mkdir $MODELS/Lora
 # RUN wget -O $MODELS/Stable-diffusion/anything-v4.5-pruned.safetensors \
@@ -15,9 +18,6 @@ RUN mkdir $MODELS/Lora
 #     https://civitai.com/api/download/models/16734 --content-disposition
 RUN wget -O $MODELS/Stable-diffusion/Kemono.safetensors \
     https://civitai.com/api/download/models/32830
-
-RUN pip install -U xformers
-RUN pip install runpod
 
 ADD handler.py .
 ADD start.sh /start.sh
