@@ -1,4 +1,4 @@
-FROM runpod/stable-diffusion:web-automatic-3.0.0
+FROM runpod/stable-diffusion:web-automatic-base-4.0.0
 
 SHELL ["/bin/bash", "-c"]
 
@@ -15,7 +15,7 @@ RUN mkdir $MODELS/Lora
 # RUN wget -O $MODELS/Stable-diffusion/anything-v4.5-pruned.safetensors \
 #     https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.5-pruned.safetensors
 # RUN wget -O $MODELS/Lora/Lucario.safetensors \
-#     https://civitai.com/api/download/models/16734 --content-disposition
+#     https://civitai.com/api/download/models/16734
 RUN wget -O $MODELS/Stable-diffusion/Kemono.safetensors \
     https://civitai.com/api/download/models/32830
 

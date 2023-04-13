@@ -4,7 +4,7 @@ RUN apt update
 # for image module
 RUN apt install -y ffmpeg libsm6 libxext6 git
 
-RUN git clone https://github.com/potaycat/Reeebot-a-Discord-bot src $saddasd
+RUN git clone https://github.com/potaycat/Reeebot-a-Discord-bot src $sadasd
 WORKDIR src
 COPY .env .
 COPY data ./data
