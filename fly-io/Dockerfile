@@ -5,7 +5,7 @@ RUN apt update
 RUN apt install -y ffmpeg libsm6 libxext6 git
 RUN pip install --upgrade pip
 
-RUN git clone https://github.com/potaycat/Reeebot-a-Discord-bot src $sssssss
+RUN git clone https://github.com/potaycat/Reeebot-a-Discord-bot src $sdwefg
 WORKDIR src
 RUN pip install -r requirements.txt
 COPY .env .
